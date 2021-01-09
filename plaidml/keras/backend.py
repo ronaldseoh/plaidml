@@ -580,7 +580,7 @@ def conv(x,
         grouping=grouping,
         kernel_format=op.ConvolutionKernelFormat.CHANNELS_LAST,
         group_format=op.GroupedChannelFormat.GroupGroupOut,
-        winograd_allowed=plaidml.settings.enable_winograd,
+        winograd_allowed=not plaidml.settings.prohibit_winograd,
         name=cur_name(),
     )
 
